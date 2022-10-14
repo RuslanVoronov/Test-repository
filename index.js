@@ -1,6 +1,7 @@
 const buttonFortune = document.querySelector('.button-fortune');
 const buttonAge = document.querySelector('.button-age');
 const buttonCredit = document.querySelector('.button-credit');
+const buttonPassword = document.querySelector('.button-pasword');
 
 function checkFortune() {
 
@@ -35,6 +36,22 @@ function checkCredit() {
 
 };
 
+function ckeckPassword() {
+
+    const password = prompt('Введите пароль:', '');
+    console.log(password);
+    for (let i = 0; i <= password.length; i = i + 1) {
+        if (password[i] === '?') {
+            console.log('"?" есть в пароле на позиции ' + (i + 1));
+        }
+        if (password[i].some("?")) {
+            (console.log('"?" в пароле не присутствует'));
+        }
+    }
+
+};
+
 buttonFortune.addEventListener('click', checkFortune);
 buttonAge.addEventListener('click', checkAge);
 buttonCredit.addEventListener('click', checkCredit);
+buttonPassword.addEventListener('click', ckeckPassword);
