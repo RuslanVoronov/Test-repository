@@ -39,16 +39,17 @@ function checkCredit() {
 function ckeckPassword() {
 
     const password = prompt('Введите пароль:', '');
-    console.log(password);
-    for (let i = 0; i <= password.length; i = i + 1) {
-        if (password[i] === '?') {
-            console.log('"?" есть в пароле на позиции ' + (i + 1));
-        }
-        if (password[i].some("?")) {
-            (console.log('"?" в пароле не присутствует'));
-        }
-    }
+    const passed = password.includes('?')
 
+    if (passed) {
+        for (let i = 0; i <= password.length; i = i + 1) {
+            if (password[i] === '?') {
+                alert('"?" есть в пароле на позиции ' + (i + 1));
+            }
+        }
+    } else {
+        alert('"?" в пароле нет')
+    }
 };
 
 buttonFortune.addEventListener('click', checkFortune);
